@@ -1,0 +1,254 @@
+body {
+  background-color: #fffcf2 !important;
+  color: #333;
+  padding-top: 40px;
+}
+
+.rating-symbol-background {
+  color: #ccc;
+}
+
+.rating-symbol-foreground .fa-star {
+  color: #FFD700;
+}
+
+.rating-symbol {
+  font-size: 12px;
+  margin-right: 0px;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card a:hover {
+  color: #007bff !important;
+}
+
+.item-img {
+  width: 640px;
+  height: 360px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.related-item-title .title a,
+.location-item a,
+.breadcrumb-item a,
+.pagination a {
+  text-decoration: none !important;
+}
+
+.related-item-title .title a {
+  color: inherit !important;
+}
+
+.related-item-title .title a:hover {
+  color: #007bff !important;
+  padding-left: 5px;
+}
+
+.pagination a {
+  border-radius: 0 !important;
+  padding: 0.5rem 0.75rem;
+  margin: 0 2px;
+}
+
+.pagination .active a {
+  background-color: transparent !important;
+  color: inherit !important;
+  border-color: #dee2e6 !important;
+  pointer-events: none;
+}
+
+.pagination a:hover {
+  background-color: #E3F2FD;
+}
+
+.location-item:hover {
+  background-color: #E3F2FD;
+}
+
+.location-item a:hover {
+  color: #007bff !important;
+  padding-left: 5px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #E3F2FD !important;
+}
+
+i.fab,
+i.fa-brands {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+/* Facebook */
+i.fa-facebook,
+i.fa-square-facebook,
+i.fa-facebook-f {
+  color: #1877F2;
+  /* xanh Facebook */
+}
+
+/* LinkedIn */
+i.fa-linkedin,
+i.fa-square-linkedin,
+i.fa-linkedin-in {
+  color: #0A66C2;
+  /* xanh LinkedIn */
+}
+
+/* YouTube */
+i.fa-youtube,
+i.fa-square-youtube,
+i.fa-youtube-square,
+i.fa-youtube-play {
+  color: #FF0000;
+  /* đỏ YouTube */
+}
+
+i.fa-instagram,
+i.fa-square-instagram {
+  background: radial-gradient(circle at 30% 107%,
+      #fdf497 0%, #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+i.fa-dailymotion {
+  color: #000000;
+}
+
+i.fa-threads,
+i.fa-square-threads {
+  color: #000000;
+}
+
+/* Hover effect (tuỳ chọn) */
+i.fab:hover {
+  opacity: 0.8;
+}
+
+header {
+  position: fixed;
+  /* cố định vị trí */
+  top: 0;
+  /* cách mép trên 0px */
+  left: 0;
+  /* căn trái */
+  width: 100%;
+  /* rộng toàn trang */
+  z-index: 1000;
+  /* để nằm trên các phần tử khác */
+  background-color: #fff;
+  /* nền để không trong suốt */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* optional: bóng mờ */
+}
+
+.card-travel {
+  background-color: #e5f0f8 !important;
+  /* xanh biển nhạt */
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.card-travel:hover {
+  background-color: #c7e8ff !important;
+  /* đậm hơn khi hover */
+}
+
+.card-travel .card-title {
+  color: #0288D1;
+}
+
+.card-travel .a {
+  background-color: #0288D1;
+  color: white;
+}
+
+.card-travel .a:hover {
+  background-color: #0277BD;
+}
+
+/* Giao diện tab với border cạnh dưới */
+.nav-tabs-custom .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #333;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.nav-tabs-custom .nav-link:hover {
+  border-bottom-color: #07283c !important;
+  color: #07283c !important;
+}
+
+.nav-tabs-custom .nav-link.active {
+  border-bottom-color: #007a00 !important;
+  color: #007a00 !important;
+  font-weight: 600 !important;
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+
+.scrollup {
+  display: none;
+  position: fixed;
+  opacity: 0.75;
+  bottom: 20px;
+  right: 15px;
+}
+
+.scrollup i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.booknow {
+  position: fixed;
+  opacity: 0.75;
+  width: auto;
+  height: 40px;
+  padding: 0px 10px;
+  line-height: 40px;
+  border-radius: 2px;
+  bottom: 20px;
+  left: 15px;
+  z-index: 999999;
+  text-decoration: none;
+}
+
+.booknow,
+.scrollup {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.booknow.show,
+.scrollup.show {
+  display: block !important;
+  opacity: 1;
+}
+
+#adgshp-1853849391 {
+  will-change: transform;
+}

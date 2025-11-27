@@ -1,0 +1,213 @@
+DEBUG - 2025-11-17 06:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-17 06:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-17 07:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-17 07:50:35 --> User logged in: admin
+DEBUG - 2025-11-17 07:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-17 07:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 07:50:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 07:50:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 07:50:42 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 07:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 07:50:48 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 07:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 07:50:48 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 07:50:54 --> ErrorException: Array to string conversion
+[Method: GET, Route: hotels/c/8553XJ6QPQ260306-da-nang-mikazuki-japanese-resorts-and-spa]
+in APPPATH\Helpers\Url_helper.php on line 134.
+ 1 APPPATH\Helpers\Url_helper.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\CodeIgniter\\travelaz\\app\\Helpers\\Url_helper.php', 134)
+ 2 APPPATH\Controllers\Items.php(457): item_img_link([...])
+ 3 APPPATH\Controllers\Items.php(434): App\Controllers\Items->updateItemMetaData([...], [...])
+ 4 APPPATH\Controllers\Items.php(109): App\Controllers\Items->showItemReviews([...], [...], [...], [...], [...], [...], 'da-nang-mikazuki-japanese-resorts-and-spa', 266)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Items->show('hotels', 'c', '8553XJ6QPQ260306', 'da-nang-mikazuki-japanese-resorts-and-spa')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Items))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 07:53:05 --> ErrorException: Array to string conversion
+[Method: GET, Route: hotels/c/8553XJ6QPQ260306-da-nang-mikazuki-japanese-resorts-and-spa]
+in APPPATH\Helpers\Url_helper.php on line 134.
+ 1 APPPATH\Helpers\Url_helper.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\CodeIgniter\\travelaz\\app\\Helpers\\Url_helper.php', 134)
+ 2 APPPATH\Controllers\Items.php(458): item_img_link([...])
+ 3 APPPATH\Controllers\Items.php(435): App\Controllers\Items->updateItemMetaData([...], [...])
+ 4 APPPATH\Controllers\Items.php(109): App\Controllers\Items->showItemReviews([...], [...], [...], [...], [...], [...], 'da-nang-mikazuki-japanese-resorts-and-spa', 266)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Items->show('hotels', 'c', '8553XJ6QPQ260306', 'da-nang-mikazuki-japanese-resorts-and-spa')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Items))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 07:54:07 --> ErrorException: Array to string conversion
+[Method: GET, Route: hotels/c/8553XJ6QPQ260306-da-nang-mikazuki-japanese-resorts-and-spa]
+in APPPATH\Controllers\Items.php on line 421.
+ 1 APPPATH\Controllers\Items.php(421): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\CodeIgniter\\travelaz\\app\\Controllers\\Items.php', 421)
+ 2 APPPATH\Controllers\Items.php(109): App\Controllers\Items->showItemReviews([...], [...], [...], [...], [...], [...], 'da-nang-mikazuki-japanese-resorts-and-spa', 266)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Items->show('hotels', 'c', '8553XJ6QPQ260306', 'da-nang-mikazuki-japanese-resorts-and-spa')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Items))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 07:54:22 --> ErrorException: Array to string conversion
+[Method: GET, Route: hotels/c/8553XJ6QPQ260306-da-nang-mikazuki-japanese-resorts-and-spa]
+in APPPATH\Helpers\Url_helper.php on line 134.
+ 1 APPPATH\Helpers\Url_helper.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\CodeIgniter\\travelaz\\app\\Helpers\\Url_helper.php', 134)
+ 2 APPPATH\Controllers\Items.php(460): item_img_link([...])
+ 3 APPPATH\Controllers\Items.php(437): App\Controllers\Items->updateItemMetaData([...], [...])
+ 4 APPPATH\Controllers\Items.php(109): App\Controllers\Items->showItemReviews([...], [...], [...], [...], [...], [...], 'da-nang-mikazuki-japanese-resorts-and-spa', 266)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Items->show('hotels', 'c', '8553XJ6QPQ260306', 'da-nang-mikazuki-japanese-resorts-and-spa')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Items))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 07:54:33 --> ErrorException: Array to string conversion
+[Method: GET, Route: hotels/c/8553XJ6QPQ260306-da-nang-mikazuki-japanese-resorts-and-spa]
+in APPPATH\Controllers\Items.php on line 421.
+ 1 APPPATH\Controllers\Items.php(421): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\CodeIgniter\\travelaz\\app\\Controllers\\Items.php', 421)
+ 2 APPPATH\Controllers\Items.php(109): App\Controllers\Items->showItemReviews([...], [...], [...], [...], [...], [...], 'da-nang-mikazuki-japanese-resorts-and-spa', 266)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Items->show('hotels', 'c', '8553XJ6QPQ260306', 'da-nang-mikazuki-japanese-resorts-and-spa')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Items))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-17 08:04:23 --> ArgumentCountError: Too few arguments to function App\Controllers\Items::getItemTags(), 2 passed in D:\CodeIgniter\travelaz\app\Controllers\Items.php on line 434 and at least 4 expected
+[Method: GET, Route: ko-KR/activities/k/15075-genting-highlands-premium-outlets-cable-car-ticket]
+in APPPATH\Controllers\Items.php on line 532.
+ 1 APPPATH\Controllers\Items.php(434): App\Controllers\Items->getItemTags([...], [...])
+ 2 APPPATH\Controllers\Items.php(76): App\Controllers\Items->showItemReviews([...], null, [...], [...], [...], '15075', 'genting-highlands-premium-outlets-cable-car-ticket')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Items->show('activities', 'k', '15075', 'genting-highlands-premium-outlets-cable-car-ticket')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Items))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-17 08:17:32 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Search.php on line 12.
+ 1 APPPATH\Controllers\Search.php(12): trim(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Search->search()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Search))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-17 08:17:36 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Search.php on line 12.
+ 1 APPPATH\Controllers\Search.php(12): trim(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Search->search()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Search))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-17 08:17:40 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Search.php on line 12.
+ 1 APPPATH\Controllers\Search.php(12): trim(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Search->search()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Search))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-17 08:17:45 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Search.php on line 12.
+ 1 APPPATH\Controllers\Search.php(12): trim(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Search->search()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Search))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-17 08:17:53 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Search.php on line 12.
+ 1 APPPATH\Controllers\Search.php(12): trim(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Search->search()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Search))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-17 08:17:58 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Search.php on line 12.
+ 1 APPPATH\Controllers\Search.php(12): trim(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Search->search()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Search))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 08:34:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 08:34:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 08:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 08:34:07 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 08:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 08:34:07 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 08:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 08:34:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 08:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 08:35:11 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 08:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 08:35:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-17 08:35:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-17 08:35:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin\Items::$db is deprecated in APPPATH\Controllers\Admin\Items.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Admin\Items->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

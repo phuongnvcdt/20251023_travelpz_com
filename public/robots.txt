@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /*/book/
+Disallow: /map
+Disallow: /*/map
+Disallow: /rentcar
+Disallow: /*/rentcar
+
+Sitemap: https://travelpz.com/sitemap.xml

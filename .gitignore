@@ -1,0 +1,83 @@
+# -----------------------------------------
+# CodeIgniter 4
+# -----------------------------------------
+
+# Environment
+.env
+.env.backup
+
+# Writable directory (CI4 lưu logs/cache/sessions/uploads)
+writable/*
+!writable/index.html
+
+# Logs
+*.log
+
+# Cache
+writable/cache/*
+!writable/cache/index.html
+
+# Sessions
+writable/session/*
+!writable/session/index.html
+
+# Uploads
+writable/uploads/*
+!writable/uploads/index.html
+
+# Debug Toolbar
+writable/debugbar/*
+!writable/debugbar/index.html
+
+# Temp files
+writable/tmp/*
+!writable/tmp/index.html
+
+# -----------------------------------------
+# Composer
+# -----------------------------------------
+
+vendor/
+
+# Composer PHAR
+composer.phar
+
+# -----------------------------------------
+# IDE Editors / OS Files
+# -----------------------------------------
+
+# VS Code
+.vscode/
+.history/
+
+# PHPStorm / IntelliJ
+.idea/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# -----------------------------------------
+# Node (nếu có)
+# -----------------------------------------
+
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# -----------------------------------------
+# Other common ignore patterns
+# -----------------------------------------
+
+*.bak
+*.tmp
+*.swp
+*.zip
+*.tar.gz
+
+# Test directory
+tests/

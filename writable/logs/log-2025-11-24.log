@@ -1,0 +1,86 @@
+DEBUG - 2025-11-24 04:26:50 --> en-US
+DEBUG - 2025-11-24 04:26:51 --> en-US
+DEBUG - 2025-11-24 04:26:51 --> en-US
+DEBUG - 2025-11-24 04:26:51 --> en-US
+ERROR - 2025-11-24 04:28:20 --> [Agoda] API request failed: API Error (400): 
+CRITICAL - 2025-11-24 05:06:20 --> TypeError: CodeIgniter\Filters\Filters::enableFilter(): Argument #1 ($filter) must be of type string, true given, called in D:\CodeIgniter\travelaz\system\Filters\Filters.php on line 641
+[Method: GET, Route: vi-IT/hotels/a/254056-v-hotel-lavender]
+in SYSTEMPATH\Filters\Filters.php on line 581.
+ 1 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter(true, 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:06:29 --> TypeError: CodeIgniter\Filters\Filters::enableFilter(): Argument #1 ($filter) must be of type string, true given, called in D:\CodeIgniter\travelaz\system\Filters\Filters.php on line 641
+[Method: GET, Route: it-IT/hotels/a/254056-v-hotel-lavender]
+in SYSTEMPATH\Filters\Filters.php on line 581.
+ 1 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter(true, 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:07:01 --> TypeError: CodeIgniter\Filters\Filters::enableFilter(): Argument #1 ($filter) must be of type string, true given, called in D:\CodeIgniter\travelaz\system\Filters\Filters.php on line 641
+[Method: GET, Route: abc]
+in SYSTEMPATH\Filters\Filters.php on line 581.
+ 1 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter(true, 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:07:33 --> TypeError: CodeIgniter\Filters\Filters::enableFilter(): Argument #1 ($filter) must be of type string, true given, called in D:\CodeIgniter\travelaz\system\Filters\Filters.php on line 641
+[Method: GET, Route: abc]
+in SYSTEMPATH\Filters\Filters.php on line 581.
+ 1 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter(true, 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:07:39 --> TypeError: CodeIgniter\Filters\Filters::enableFilter(): Argument #1 ($filter) must be of type string, true given, called in D:\CodeIgniter\travelaz\system\Filters\Filters.php on line 641
+[Method: GET, Route: abcaaa]
+in SYSTEMPATH\Filters\Filters.php on line 581.
+ 1 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter(true, 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:07:47 --> TypeError: CodeIgniter\Filters\Filters::enableFilter(): Argument #1 ($filter) must be of type string, true given, called in D:\CodeIgniter\travelaz\system\Filters\Filters.php on line 641
+[Method: GET, Route: vi-vn/hotels/chh/8553XJ6QPQ260306-geneva-motel]
+in SYSTEMPATH\Filters\Filters.php on line 581.
+ 1 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter(true, 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:22:34 --> Error: Object of class CodeIgniter\HTTP\Response could not be converted to string
+[Method: GET, Route: dndn]
+in SYSTEMPATH\CodeIgniter.php on line 957.
+ 1 SYSTEMPATH\CodeIgniter.php(360): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 2 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 3 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 4 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:22:39 --> Error: Object of class CodeIgniter\HTTP\Response could not be converted to string
+[Method: GET, Route: vi-vn/abc]
+in SYSTEMPATH\CodeIgniter.php on line 957.
+ 1 SYSTEMPATH\CodeIgniter.php(360): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 2 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 3 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 4 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-24 05:22:39 --> Error: Object of class CodeIgniter\HTTP\Response could not be converted to string
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH\CodeIgniter.php on line 957.
+ 1 SYSTEMPATH\CodeIgniter.php(360): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 2 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 3 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 4 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-24 05:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:41:59 --> User logged in: admin
+DEBUG - 2025-11-24 05:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:42:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
