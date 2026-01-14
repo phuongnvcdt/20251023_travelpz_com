@@ -128,6 +128,9 @@ $routes->get('sitemap.xml', 'Sitemap::index');
 $routes->get('sitemap/(:segment)-sitemap-(:num).xml', 'Sitemap::detail/$1/$2');
 $routes->get('sitemap/pages-sitemap.xml', 'Sitemap::pages');
 
+// ETL
+$routes->post('etl/login', 'ETL::login');
+
 // Any
 $routes->add('(.*)', 'Home::any');
 

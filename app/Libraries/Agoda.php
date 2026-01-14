@@ -206,9 +206,10 @@ class Agoda extends BaseAPI
     ];
     $addresses = array_filter($addresses, fn($adr) => !empty($adr));
 
+    $title = $activity['content']['activity']['title'] ?? null;
     $data = [
-      'en_name' => $langId == 1 ? ($activity['content']['activity']['title'] ?? null) : null,
-      'trans_name' => $activity['content']['activity']['title'] ?? null,
+      'en_name' => $langId == 1 ? $title : null,
+      'trans_name' => $title,
       'categories' => $activity['content']['activity']['categories'] ?? [],
       'address' => [
         'country' => $country,

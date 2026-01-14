@@ -17,6 +17,10 @@ writable/*
 writable/cache/*
 !writable/cache/index.html
 
+# Logs
+writable/logs/*
+!writable/logs/index.html
+
 # Sessions
 writable/session/*
 !writable/session/index.html

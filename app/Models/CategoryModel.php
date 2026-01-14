@@ -23,7 +23,7 @@ class CategoryModel extends Model
 
   public function getLink($cat, $locale = '')
   {
-    $localeUrl =  rtrim(base_url(), '/');
+    $localeUrl = rtrim(base_url(), '/');
     $defaultLocale = config('App')->defaultLocale;
     if (!empty($locale) && $locale != $defaultLocale) {
       $localeUrl .= '/' . $locale;
