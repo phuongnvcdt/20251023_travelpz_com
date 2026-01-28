@@ -81,10 +81,16 @@ class Locations extends BaseController
 
     $breadcrumbs_data = $this->getLocBreadcrumbs($locs, $loc['trans_name'] ?? $loc['en_name']);
     $sidebar_data = $this->getSidebarData($locs[0] ?? $loc);
-    $tags = array_map(fn($cat) => [
-      'link' => relate_items_link($cat, $loc),
-      'name' => relate_items_title($cat, $loc),
-    ], $this->base_data['categories']);
+    $tags = [];
+    foreach ($this->base_data['categories'] as $cat) {
+      if (!empty($this->itemModel->getCount($loc, $cat))) {
+        array_push($tags, [
+          'link' => relate_items_link($cat, $loc),
+          'name' => relate_items_title($cat, $loc),
+        ]);
+      }
+    }
+
     $this->updateLocationMetaData($loc, $detail);
 
     $this->response->removeHeader('Cache-Control');

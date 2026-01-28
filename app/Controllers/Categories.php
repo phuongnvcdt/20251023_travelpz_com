@@ -55,6 +55,13 @@ class Categories extends BaseController
         $country = $this->locationModel->find($loc['parent_id']);
         $builder->where('city_id', $loc['id']);
       }
+    } else if (!empty($locSlug)) {
+      $currentUrl = current_url();
+      $query = $_GET;
+      unset($query['loc']);
+      $redirectUrl = $currentUrl . (empty($query) ? '' : '?' . http_build_query($query));
+
+      return redirect()->to($redirectUrl, 301);
     }
 
     if ($cat['parent_id'] == null) {

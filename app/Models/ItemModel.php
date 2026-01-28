@@ -74,4 +74,16 @@ class ItemModel extends Model
       $item['slug'] = $this->getSlug($item);
     }
   }
+
+  public function getCount($loc, $cat)
+  {
+    if ($loc['parent_id'] != null) {
+      $builder = $this->where('city_id', $loc['id']);
+    } else {
+      $builder = $this->where('country_id', $loc['id']);
+    }
+
+    return $builder->where('category_id', $cat['id'])
+      ->countAllResults();
+  }
 }
