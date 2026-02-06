@@ -102,7 +102,7 @@ class Items extends BaseController
             'sub_categories' => $this->categoryModel->where('parent_id !=', null)->findAll(),
             'locations' => $this->locationModel->findAll(),
             'countries' => $this->locationModel->where('parent_id', null)->findAll(),
-            'cities' => $this->locationModel->where('parent_id !=', null)->findAll(),
+            'cities' => $this->locationModel->where('parent_id', $item['country_id'])->findAll(),
             'selected_subs' => $selected_subs
         ];
 

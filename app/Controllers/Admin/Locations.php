@@ -30,7 +30,7 @@ class Locations extends BaseController
     public function create()
     {
         $data['sources'] = $this->sourceModel->findAll();
-        $data['parents'] = $this->locationModel->findAll(); // cho chọn parent
+        $data['parents'] = $this->locationModel->where('parent_id', null)->findAll(); // cho chọn parent
         return view('admin/locations/create', $data);
     }
 

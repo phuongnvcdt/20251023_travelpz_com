@@ -238,6 +238,10 @@ class Items extends ResourceController
     if (!empty($country_id)) {
       $country = $locationModel->findBySource($source, $country_id, null);
       if (!$country && !empty($country_name)) {
+        if ($country_name == 'UAE') {
+          $country_name = 'United Arab Emirates';
+        }
+        
         $country = $locationModel->insertBySource($source, $country_id, $country_name);
         if (!$country) {
           return $this->respond([
@@ -342,7 +346,7 @@ class Items extends ResourceController
 
     if (isset($country)) {
       $city_id = $detail['address']['city']['id'] ?? null;
-      $city_name = $detail['address']['country']['name'] ?? null;
+      $city_name = $detail['address']['city']['name'] ?? null;
       if (!empty($city_id)) {
         $city = $locationModel->findBySource($source, $city_id, $country['id']);
         if (!$city && !empty($city_name)) {

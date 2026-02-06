@@ -34,7 +34,7 @@
 
                 <div class="mb-3">
                     <label for="location_source_id" class="form-label">ID</label>
-                    <input type="number" class="form-control" id="location_source_id" name="location_source_id" required>
+                    <input type="text" class="form-control" id="location_source_id" name="location_source_id" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">Save</button>

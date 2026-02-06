@@ -59,17 +59,17 @@
 
       <div class="mb-3">
         <label class="form-label">Country</label>
-        <select class="form-select" name="country_id">
+        <select id="sl_country" class="form-select" name="country_id" data-url="<?= locale_url('ajax/locations') ?>">
           <option value="" selected disabled>-- Select --</option>
           <?php foreach ($countries as $loc): ?>
-            <option value="<?= $loc['id'] ?>" <?= $loc['id'] == $item['country_id'] ? 'selected' : '' ?>><?= esc($loc['en_name']) ?></option>
+            <option value="<?= $loc['id'] ?>" data-slug="<?= $loc['slug'] ?>" <?= $loc['id'] == $item['country_id'] ? 'selected' : '' ?>><?= esc($loc['en_name']) ?></option>
           <?php endforeach; ?>
         </select>
       </div>
 
       <div class="mb-3">
         <label class="form-label">City</label>
-        <select class="form-select" name="city_id">
+        <select id="sl_city" class="form-select" name="city_id">
           <option value="" selected disabled>-- Select --</option>
           <?php foreach ($cities as $loc): ?>
             <option value="<?= $loc['id'] ?>" <?= $loc['id'] == $item['city_id'] ? 'selected' : '' ?>><?= esc($loc['en_name']) ?></option>
@@ -106,15 +106,7 @@
     </form>
   </div>
 
-  <script>
-    $(document).ready(function() {
-      $('.subcategories-select').select2({
-        placeholder: "  -- Select --",
-        allowClear: true,
-        width: '100%'
-      });
-    });
-  </script>
+  <script src="<?= base_url('assets/js/admin.item.edit.js') ?>"></script>
 </body>
 
 </html>
