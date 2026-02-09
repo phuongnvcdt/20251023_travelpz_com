@@ -128,9 +128,6 @@ $routes->get('sitemap.xml', 'Sitemap::index');
 $routes->get('sitemap/(:segment)-sitemap-(:num).xml', 'Sitemap::detail/$1/$2');
 $routes->get('sitemap/pages-sitemap.xml', 'Sitemap::pages');
 
-// ETL
-$routes->post('etl/login', 'ETL::login');
-
 // Any
 $routes->add('(.*)', 'Home::any');
 
@@ -165,5 +162,17 @@ $routes->group('api', function ($routes) {
   $routes->group('v1', ['filter' => 'apiauth'], function ($routes) {
     $routes->get('items', 'Api\V1\Items::index');
     $routes->resource('items', ['controller' => 'Api\V1\Items']);
+  });
+
+  $routes->group('etl', function ($routes) {
+    $routes->group('v1', function ($routes) {
+      $routes->post('login', 'Api\ETL\V1\ETL::login');
+    });
+  });
+
+  $routes->group('booking', function ($routes) {
+    $routes->group('v1', function ($routes) {
+      $routes->post('reviews', 'Api\Booking\V1\BookingController::getReviews');
+    });
   });
 });
