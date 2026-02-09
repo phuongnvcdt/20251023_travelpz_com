@@ -12,6 +12,7 @@ class Search extends BaseController
     $keyword = trim(esc($this->request->getGet('q')));
     $catSlug = esc($this->request->getGet('cat'));
     $locSlug = esc($this->request->getGet('loc'));
+    $srcSlug = esc($this->request->getGet('s'));
 
     $currentUrl = current_url();
     $orgQuery = $_GET;
@@ -39,6 +40,16 @@ class Search extends BaseController
     }
 
     $builder = $this->itemModel;
+    if (!empty($srcSlug)) {
+      $sourceModel = new \App\Models\SourceModel();
+      $source = $sourceModel->where('slug', $srcSlug)
+        ->first();
+
+      if ($source) {
+        $builder->where('items.source_id', $source['id']);
+      }
+    }
+
     if (!empty($locSlug)) {
       $loc = $this->locationModel
         ->where('slug', $locSlug)
