@@ -23,6 +23,7 @@ class Locations extends BaseController
     $list = $this->locationModel->select('locations.slug, locations.en_name, location_translations.name as trans_name')
       ->join('location_translations', "location_translations.location_id = locations.id AND location_translations.language_id = {$this->language_id}", 'left')
       ->where('parent_id', $parent_loc['id'] ?? 0)
+      ->orderBy('en_name', 'ASC')
       ->findAll();
     return $this->response->setJSON($list);
   }
