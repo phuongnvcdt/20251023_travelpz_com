@@ -10,6 +10,7 @@ class Klook extends BaseAPI
   const HOTELS_ADID = 1156497;
   const ACTIVITIES_ADID = 1156498;
   const SEARCH_ADID = 1156499;
+  const WIDGET_ADID = 1252423;
 
   public static function affiliateLink($category, $lang, $id, $slug)
   {

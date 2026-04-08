@@ -8,6 +8,7 @@ class Kkday extends BaseAPI
 {
   const AFFILIATE_ID = 23173;
   const UD1 = 'tpz';
+  const ADS_ID = 6221;
 
   public static function affiliateLink($lang, $id, $slug)
   {
