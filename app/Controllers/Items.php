@@ -28,7 +28,14 @@ class Items extends BaseController
   public function show($categorySlug, $sourceSlug, $sourceId, $slug)
   {
     if (!is_bot($this->request)) {
-      // TBD
+      if (rand(1, 100) <= 25) {
+        $userAgent = $this->request->getUserAgent()->getAgentString();
+        $url = current_url();
+        $logFile = WRITEPATH . 'logs/redirect-' . date('Y-m') . '.log';
+        $logLine = date('Y-m-d H:i:s') . ' | ' . $userAgent . ' | ' . $url . PHP_EOL;
+        file_put_contents($logFile, $logLine, FILE_APPEND | LOCK_EX);
+        return $this->book($categorySlug, $sourceSlug, $sourceId, $slug);
+      }
     }
 
     // Tìm category_id theo tên
@@ -81,6 +88,7 @@ class Items extends BaseController
             $detail = null;
         }
 
+        \Config\Database::connect()->reconnect();
         return $this->showItemDetail($item, $detail, $category, $source, $sourceId);
 
       case 'Klook':
@@ -93,12 +101,14 @@ class Items extends BaseController
           default:
             $reviews = null;
         }
+        \Config\Database::connect()->reconnect();
         return $this->showItemReviews($item, null, $reviews, $category, $source, $sourceId, $slug);
 
       case 'Kkday':
         $locale = $this->language['kd_code'] ?? '';
         $kkday = new Kkday();
         $reviews = $kkday->getItemReviews($sourceId, $locale)['data'] ?? null;
+        \Config\Database::connect()->reconnect();
         return $this->showItemReviews($item, null, $reviews, $category, $source, $sourceId, $slug);
 
       case 'Carla':
@@ -130,6 +140,7 @@ class Items extends BaseController
           ]
         ];
 
+        \Config\Database::connect()->reconnect();
         return $this->showItemReviews($item, $detail, $reviews, $category, $source, $sourceId, $slug, $reviews_count);
 
       default:
@@ -461,7 +472,7 @@ class Items extends BaseController
       ],
     ];
 
-    if (!empty($item['youtube_id'])) {
+    if (!empty($item['youtube_id']) && is_bot($this->request)) {
       $videoInfo = YoutubeWrap::getVideoInfo($item['youtube_id'], $this->language['code'] ?? '');
       if (!empty($videoInfo)) {
         $videoTitle = $videoInfo['snippet']['localized']['title'] ?? $videoInfo['snippet']['title'] ?? item_title($item);

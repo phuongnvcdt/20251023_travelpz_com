@@ -182,6 +182,36 @@ header {
   background-color: #0277BD;
 }
 
+.card-travel img,
+.carousel-item img,
+.review-images img,
+.youtube-video iframe {
+  transition: transform 0.3s ease;
+}
+
+.card-travel img:hover,
+.review-images img:hover {
+  transform: scale(1.05);
+}
+
+.youtube-video {
+  overflow: hidden;
+  border-radius: var(--bs-border-radius-lg);
+}
+
+.youtube-video iframe:hover {
+  transform: scale(1.1);
+}
+
+.carousel-item {
+  overflow: hidden;
+  border-radius: var(--bs-border-radius-lg);
+}
+
+.carousel-item img:hover {
+  transform: scale(1.1);
+}
+
 /* Giao diện tab với border cạnh dưới */
 .nav-tabs-custom .nav-link {
   border: none;

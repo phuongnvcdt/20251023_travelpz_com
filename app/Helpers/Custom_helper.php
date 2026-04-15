@@ -118,14 +118,39 @@ if (!function_exists('is_bot')) {
   function is_bot($request)
   {
     $agent = $request->getUserAgent();
-    if ($agent->isRobot()) {
+    if ($agent && method_exists($agent, 'isRobot') && $agent->isRobot()) {
       return true;
     }
 
+    $ua = $agent ? $agent->getAgentString() : ($_SERVER['HTTP_USER_AGENT'] ?? '');
+
+    if (!$ua) {
+      return true; // không có UA -> bot
+    }
+
+    $ua = trim($ua);
+
+    // 0. HTTP header fingerprint — browser thật luôn gửi đủ các header này
+    if (!$request->getHeaderLine('Accept-Language')) {
+      return true;
+    }
+
+    if (!$request->getHeaderLine('Accept-Encoding')) {
+      return true;
+    }
+
+    // $accept = $request->getHeaderLine('Accept');
+    // if ($accept && !str_contains($accept, 'text/html') && !str_contains($accept, '*/*')) {
+    //   return true;
+    // }
+
+    // 1. Keyword bot
     $extraBots = [
       'bot',
       'tool',
       'spider',
+      'crawler',
+      'crawl',
       'GoogleOther',
       'YouTube',
       'Pinterest',
@@ -135,8 +160,6 @@ if (!function_exists('is_bot')) {
       'ia_archiver',
       'facebookexternalhit',
       'meta-externalagent',
-      'crawl',
-      'slurp',
       'mediapartners-google',
       'HeadlessChrome',
       'okhttp',
@@ -150,11 +173,111 @@ if (!function_exists('is_bot')) {
       'Lighthouse',
       'Google-Read-Aloud',
       'ChatGPT-User',
+      'curl',
+      'wget',
+      'python',
+      'httpclient',
+      'scrapy',
+      'selenium',
+      'playwright',
+      'phantom',
+      // Social media link preview
+      'WhatsApp',
+      'Telegram',
+      'Discordbot',
+      'Slackbot',
+      'Twitterbot',
+      'LinkedInBot',
+      // SEO crawlers
+      'AhrefsBot',
+      'SemrushBot',
+      'MJ12bot',
+      'DotBot',
+      'Baiduspider',
+      'applebot',
+      // Monitoring
+      'UptimeRobot',
+      'StatusCake',
+      'Site24x7',
+      // Office/custom tools
+      'BKOffice',
     ];
 
-    $ua = $agent->getAgentString();
     $pattern = '/' . implode('|', array_map('preg_quote', $extraBots)) . '/i';
-    return preg_match($pattern, $ua) === 1;
+    if (preg_match($pattern, $ua)) {
+      return true;
+    }
+
+    // 2. UA bất thường
+    $suspiciousPatterns = [
+      '/windows nt [1-5]\./i',     // quá cũ
+      '/windows nt 1[1-9]\./i',    // NT 11+ không tồn tại (Win11 vẫn là NT 10.0)
+      '/iphone os [1-7]_/i',       // quá cũ
+      '/ppc mac os/i',             // cực hiếm
+
+      '/firefox\/3\.[0-9]/i',      // fake
+      '/firefox\/\d{3,}/i',        // version vô lý
+
+      '/gecko\/\d{4}-\d{2}-\d{2}/i', // sai format
+
+      // // Chrome/Edge version thiếu octet (phải là x.x.x.x)
+      // '/(?:chrome|edg(?:e|ios)?)\/\d+\.\d+\.\d+(?!\.\d)/i',
+    ];
+
+    foreach ($suspiciousPatterns as $regex) {
+      if (preg_match($regex, $ua)) {
+        return true;
+      }
+    }
+
+    // 3. UA quá ngắn (bot thường rút gọn)
+    if (strlen($ua) < 20) {
+      return true;
+    }
+
+    // 4. Không có browser phổ biến → nghi bot
+    if (!preg_match('/(chrome|safari|firefox|edg|opera)/i', $ua)) {
+      return true;
+    }
+
+    // 5. Logic consistency (GIẢM false positive)
+    $hasChrome  = stripos($ua, 'Chrome') !== false;
+    $hasSafari  = stripos($ua, 'Safari') !== false;
+    $hasFirefox = stripos($ua, 'Firefox') !== false;
+
+    // Chrome mà không có Safari → đáng nghi
+    if ($hasChrome && !$hasSafari) {
+      return true;
+    }
+
+    // Safari thật (không phải Chrome) phải có Version/
+    if ($hasSafari && !$hasChrome && stripos($ua, 'Version/') === false) {
+      return true;
+    }
+
+    // Firefox mà không có Gecko → sai cấu trúc
+    if ($hasFirefox && stripos($ua, 'Gecko/') === false) {
+      return true;
+    }
+
+    // 6. Detect Chrome version bất thường
+    if (preg_match('/chrome\/(\d{2,3})/i', $ua, $m)) {
+      $version = (int)$m[1];
+
+      // Chrome < 80 (Feb 2020): quá cũ, dùng năm 2026 là bất thường
+      if ($version < 80) {
+        return true;
+      }
+
+      // Chrome version quá cao so với hiện tại (~12 version/năm, buffer 2 năm)
+      // offset 24146 = calibrated: Chrome 146 tháng 4/2026; buffer +24 (~2 năm)
+      $maxChrome = (int) date('Y') * 12 + (int) date('n') - 24146;
+      if ($version > $maxChrome) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
 

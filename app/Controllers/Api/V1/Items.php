@@ -99,6 +99,7 @@ class Items extends ResourceController
             break;
         }
 
+        \Config\Database::connect()->reconnect();
         return $this->addAgodaItem($data, $detail, $source, $category);
 
       case 'Klook':

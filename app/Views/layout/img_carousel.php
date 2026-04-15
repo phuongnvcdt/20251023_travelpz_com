@@ -3,9 +3,9 @@
     <?php foreach ($images as $index => $img): ?>
       <div class="carousel-item ratio ratio-16x9 <?= $index == 0 ? 'active' : '' ?>">
         <?php if ($index == 0): ?>
-          <img src="<?= esc($img['url']) ?>" class="d-block w-100 h-100 object-fit-cover lazyload rounded-3" alt="<?= empty($img['title']) ? 'Image ' . ($index + 1) : $img['title'] ?>" fetchpriority="high">
+          <img src="<?= esc($img['url']) ?>" class="d-block w-100 h-100 object-fit-cover lazyload" alt="<?= empty($img['title']) ? 'Image ' . ($index + 1) : $img['title'] ?>" fetchpriority="high">
         <?php else: ?>
-          <img data-src="<?= esc($img['url']) ?>" class="d-block w-100 h-100 object-fit-cover lazyload rounded-3" alt="<?= empty($img['title']) ? 'Image ' . ($index + 1) : $img['title'] ?>" fetchpriority="auto" loading="lazy">
+          <img data-src="<?= esc($img['url']) ?>" class="d-block w-100 h-100 object-fit-cover lazyload" alt="<?= empty($img['title']) ? 'Image ' . ($index + 1) : $img['title'] ?>" fetchpriority="auto" loading="lazy">
         <?php endif; ?>
       </div>
     <?php endforeach; ?>

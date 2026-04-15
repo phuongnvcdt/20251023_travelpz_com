@@ -61,6 +61,7 @@ class Locations extends BaseController
         $langId = $this->language['a_id'] ?? 1;
         $agoda = new Agoda();
         $detail = $agoda->getLocationDetail($a_loc['location_source_id'], empty($loc['parent_id']) ? 4 : 5, $langId)['data'] ?? null;
+        \Config\Database::connect()->reconnect();
       }
     }
 

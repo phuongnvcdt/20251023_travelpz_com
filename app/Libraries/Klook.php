@@ -47,7 +47,7 @@ class Klook extends BaseAPI
 
       $json = $this->handleResponse($response);
     } catch (\Throwable $e) {
-      log_message('error', '[Klook] API request failed: ' . $e->getMessage());
+      log_message('error', '[Klook] API request failed (' . $url . '): ' . $e->getMessage());
       return [
         'success' => false,
         'message' => $e->getMessage()

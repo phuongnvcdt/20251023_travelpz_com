@@ -60,8 +60,8 @@
       <?php endif; ?>
 
       <?php if (!empty($item['youtube_id'])): ?>
-        <div class="ratio ratio-16x9 mt-5">
-          <iframe class="d-block w-100 h-100 object-fit-cover lazyload rounded-3" src="https://www.youtube.com/embed/<?= esc($item['youtube_id']) ?>" title="YouTube video" frameborder="0" allowfullscreen>
+        <div class="youtube-video ratio ratio-16x9 mt-5">
+          <iframe class="d-block w-100 h-100 object-fit-cover lazyload" src="https://www.youtube.com/embed/<?= esc($item['youtube_id']) ?>" title="YouTube video" frameborder="0" allowfullscreen>
           </iframe>
         </div>
       <?php endif; ?>
