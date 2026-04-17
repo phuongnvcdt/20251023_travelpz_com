@@ -31,8 +31,9 @@ class Items extends BaseController
       if (rand(1, 100) <= 25) {
         $userAgent = $this->request->getUserAgent()->getAgentString();
         $url = current_url();
-        $logFile = WRITEPATH . 'logs/redirect-' . date('Y-m') . '.log';
-        $logLine = date('Y-m-d H:i:s') . ' | ' . $userAgent . ' | ' . $url . PHP_EOL;
+        $now = new \DateTime('now', new \DateTimeZone('Asia/Ho_Chi_Minh'));
+        $logFile = WRITEPATH . 'logs/redirect-' . $now->format('Y-m') . '.log';
+        $logLine = $now->format('Y-m-d H:i:s') . ' | ' . $userAgent . ' | ' . $url . PHP_EOL;
         file_put_contents($logFile, $logLine, FILE_APPEND | LOCK_EX);
         return $this->book($categorySlug, $sourceSlug, $sourceId, $slug);
       }

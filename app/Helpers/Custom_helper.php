@@ -215,13 +215,25 @@ if (!function_exists('is_bot')) {
       '/iphone os [1-7]_/i',       // quá cũ
       '/ppc mac os/i',             // cực hiếm
 
-      '/firefox\/3\.[0-9]/i',      // fake
+      '/firefox\/[1-5]\d\./i',      // Firefox < 60 (2019): quá cũ
       '/firefox\/\d{3,}/i',        // version vô lý
 
       '/gecko\/\d{4}-\d{2}-\d{2}/i', // sai format
 
-      // // Chrome/Edge version thiếu octet (phải là x.x.x.x)
-      // '/(?:chrome|edg(?:e|ios)?)\/\d+\.\d+\.\d+(?!\.\d)/i',
+      // Chrome/Edge version thiếu octet (phải là x.x.x.x)
+      '/(?:chrome|edg(?:e|ios)?)\/\d+\.\d+\.\d+(?!\.\d)/i',
+
+      // Android device model là 1 ký tự (K, X, ...) → bot fingerprint
+      '/Android \d+; [A-Z]\)/i',
+
+      // Opera/Presto — engine chết từ 2013
+      '/Presto\/\d/i',
+
+      // WebKit quá cũ (≤ 534 = trước 2011)
+      '/AppleWebKit\/([1-4]\d{2}|5[0-2]\d|53[0-4])\./i',
+
+      // Android 4.x trở xuống (2013 trở về trước)
+      '/Android [1-4]\./i',
     ];
 
     foreach ($suspiciousPatterns as $regex) {
@@ -264,8 +276,8 @@ if (!function_exists('is_bot')) {
     if (preg_match('/chrome\/(\d{2,3})/i', $ua, $m)) {
       $version = (int)$m[1];
 
-      // Chrome < 80 (Feb 2020): quá cũ, dùng năm 2026 là bất thường
-      if ($version < 80) {
+      // Chrome < 90 (Apr 2021): quá cũ, dùng năm 2026 là bất thường
+      if ($version < 90) {
         return true;
       }
 
