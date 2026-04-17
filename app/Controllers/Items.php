@@ -27,13 +27,13 @@ class Items extends BaseController
    */
   public function show($categorySlug, $sourceSlug, $sourceId, $slug)
   {
-    if (!is_bot($this->request)) {
+    if (!is_bot($this->request) && !is_ip_rate_limited($this->request)) {
       if (rand(1, 100) <= 25) {
         $userAgent = $this->request->getUserAgent()->getAgentString();
         $url = current_url();
         $now = new \DateTime('now', new \DateTimeZone('Asia/Ho_Chi_Minh'));
         $logFile = WRITEPATH . 'logs/redirect-' . $now->format('Y-m') . '.log';
-        $logLine = $now->format('Y-m-d H:i:s') . ' | ' . $userAgent . ' | ' . $url . PHP_EOL;
+        $logLine = $now->format('Y-m-d H:i:s') . ' | ' . $this->request->getIPAddress() . ' | ' . $userAgent . ' | ' . $url . PHP_EOL;
         file_put_contents($logFile, $logLine, FILE_APPEND | LOCK_EX);
         return $this->book($categorySlug, $sourceSlug, $sourceId, $slug);
       }

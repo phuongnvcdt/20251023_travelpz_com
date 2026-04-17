@@ -293,6 +293,15 @@ if (!function_exists('is_bot')) {
   }
 }
 
+if (!function_exists('is_ip_rate_limited')) {
+  function is_ip_rate_limited($request, int $maxPerMinute = 30): bool
+  {
+    $throttler = \Config\Services::throttler();
+    $key = 'rl_' . md5($request->getIPAddress());
+    return !$throttler->check($key, $maxPerMinute, MINUTE);
+  }
+}
+
 if (!function_exists('is_mobile')) {
   function is_mobile($request)
   {
