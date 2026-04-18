@@ -289,6 +289,72 @@ if (!function_exists('is_bot')) {
       }
     }
 
+    // 7. Datacenter / known bot IP
+    if (is_datacenter_ip($request->getIPAddress())) {
+      return true;
+    }
+
+    return false;
+  }
+}
+
+if (!function_exists('is_datacenter_ip')) {
+  function is_datacenter_ip(string $ip): bool
+  {
+    // IPv6: check prefix
+    if (str_contains($ip, ':')) {
+      foreach (
+        [
+          '2a03:2880:', // Facebook/Meta crawlers
+          '2001:4860:', // Google
+          '2607:f8b0:', // Google
+          '2404:6800:', // Google APAC
+          '2a00:1450:', // Google EU
+        ] as $prefix
+      ) {
+        if (stripos($ip, $prefix) === 0) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // IPv4: CIDR check
+    $long = ip2long($ip);
+    if ($long === false) return false;
+
+    foreach (
+      [
+        // Googlebot
+        '66.249.64.0/19',
+        '66.249.96.0/19',
+        '64.233.160.0/19',
+        '74.125.0.0/16',
+        // Facebook/Meta
+        '31.13.24.0/21',
+        '31.13.64.0/18',
+        '66.220.144.0/20',
+        '69.63.176.0/20',
+        '69.171.224.0/19',
+        '173.252.64.0/18',
+        '204.15.20.0/22',
+        // AWS
+        '16.0.0.0/8',
+        '18.128.0.0/9',
+        '34.192.0.0/10',
+        '35.80.0.0/12',
+        '44.192.0.0/10',
+        '52.0.0.0/8',
+        '54.0.0.0/8',
+      ] as $cidr
+    ) {
+      [$subnet, $bits] = explode('/', $cidr);
+      $mask = -1 << (32 - (int) $bits);
+      if (($long & $mask) === (ip2long($subnet) & $mask)) {
+        return true;
+      }
+    }
+
     return false;
   }
 }
