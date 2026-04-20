@@ -12,21 +12,66 @@ class Klook extends BaseAPI
   const SEARCH_ADID = 1156499;
   const WIDGET_ADID = 1252423;
 
-  public static function affiliateLink($category, $lang, $id, $slug)
+  const SOCIAL_AID = 82772;
+  const FB_ADID = 1156556;
+  const DM_ADID = 1156557;
+  const LK_ADID = 1156558;
+  const THR_ADID = 1156560;
+  const YTB_HOTELS_ADID = 1156547;
+  const YTB_ACTIVITIES_ADID = 1156552;
+
+  public static function affiliateLink($category, $lang, $id, $slug, $s = null)
   {
-    switch ($category) {
-      case 'Hotels':
-        return "https://www.klook.com/{$lang}/hotels/detail/{$id}-{$slug}/?aid=" . self::AFFILIATE_ID . '&aff_adid=' . self::HOTELS_ADID . '&partner=travelpz';
-      case 'Activities':
-        return "https://www.klook.com/{$lang}/activity/{$id}-{$slug}/?aid=" . self::AFFILIATE_ID . '&aff_adid=' . self::ACTIVITIES_ADID . '&partner=travelpz';
+    switch ($s) {
+      case 'fb':
+        $aid = self::SOCIAL_AID;
+        $aff_adid = self::FB_ADID;
+        break;
+
+      case 'dm':
+        $aid = self::SOCIAL_AID;
+        $aff_adid = self::DM_ADID;
+        break;
+
+      case 'lk':
+        $aid = self::SOCIAL_AID;
+        $aff_adid = self::LK_ADID;
+        break;
+
+      case 'thr':
+        $aid = self::SOCIAL_AID;
+        $aff_adid = self::THR_ADID;
+        break;
+
+      case 'ytb':
+        $aid = self::SOCIAL_AID;
+        if ($category == 'Hotels') {
+          $aff_adid = self::YTB_HOTELS_ADID;
+        } else if ($category == 'Activities') {
+          $aff_adid = self::YTB_ACTIVITIES_ADID;
+        } else {
+          $aff_adid = '';
+        }
+        break;
+
+      default:
+        $aid = self::AFFILIATE_ID;
+        if ($category == 'Hotels') {
+          $aff_adid = self::HOTELS_ADID;
+        } else if ($category == 'Activities') {
+          $aff_adid = self::ACTIVITIES_ADID;
+        } else {
+          $aff_adid = '';
+        }
+        break;
     }
 
-    return 'https://www.klook.com/?aid=' . self::AFFILIATE_ID;
+    return "https://www.klook.com/{$lang}/hotels/detail/{$id}-{$slug}/?aid=" . $aid . '&aff_adid=' . $aff_adid . '&partner=travelpz';
   }
 
   public function getActivityReviews($id, $locale, $page = 1, $curency = 'USD', $sort = 'sort_score_high_to_low', $filter = '')
   {
-    if (!isset($id) || !isset($locale) || !isset($page) || !isset($curency) || !isset($sort) || !isset($filter)) {      
+    if (!isset($id) || !isset($locale) || !isset($page) || !isset($curency) || !isset($sort) || !isset($filter)) {
       return [
         'success' => false,
         'message' => 'Invalid params'

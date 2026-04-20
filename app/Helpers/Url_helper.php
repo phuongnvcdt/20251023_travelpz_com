@@ -157,7 +157,7 @@ if (!function_exists('itemThumbLink')) {
 }
 
 if (!function_exists('item_book_link')) {
-  function item_book_link($item)
+  function item_book_link($item, $s = null)
   {
     $itemModel = new ItemModel();
     $itemModel->updateBaseData($item);
@@ -166,6 +166,10 @@ if (!function_exists('item_book_link')) {
     }
 
     $path = $item['category']['slug'] . '/' . $item['source']['slug'] . '/book/' . $item['source_item_id'] . '-' . $item['slug'];
+    if (!empty($s)) {
+      $path .= '?s=' . $s;
+    }
+
     if (!empty($item['locales']) && !in_array(strtolower(config('App')->currentLocale), $item['locales'])) {
       return base_url($path);
     }
@@ -175,7 +179,7 @@ if (!function_exists('item_book_link')) {
 }
 
 if (!function_exists('item_aff_link')) {
-  function item_aff_link($item)
+  function item_aff_link($item, $s = null)
   {
     $locale = config('App')->currentLocale ?? config('App')->defaultLocale;
 
@@ -195,7 +199,7 @@ if (!function_exists('item_aff_link')) {
           ->first();
         $kCode = $language['k_code'] ?? 'en-US';
 
-        return Klook::affiliateLink($item['category']['en_name'], $kCode, $item['source_item_id'], $item['slug']);
+        return Klook::affiliateLink($item['category']['en_name'], $kCode, $item['source_item_id'], $item['slug'], $s);
 
       case 'Kkday':
         $languageModel = new LanguageModel();
@@ -203,7 +207,7 @@ if (!function_exists('item_aff_link')) {
           ->first();
         $kdCode = $language['kd_code'] ?? 'en-US';
 
-        return Kkday::affiliateLink($kdCode, $item['source_item_id'], $item['slug']);
+        return Kkday::affiliateLink($kdCode, $item['source_item_id'], $item['slug'], $s);
 
       case 'Carla':
         $calarId = Carla::decode($item['source_item_id']);

@@ -10,7 +10,7 @@ class Kkday extends BaseAPI
   const UD1 = 'tpz';
   const ADS_ID = 6221;
 
-  public static function affiliateLink($lang, $id, $slug)
+  public static function affiliateLink($lang, $id, $slug, $s = null)
   {
     $url = "https://www.kkday.com";
     if (!empty($lang)) {
@@ -22,7 +22,13 @@ class Kkday extends BaseAPI
       $url .= '-' . $slug;
     }
 
-    $url .= '?cid=' . self::AFFILIATE_ID . '&ud1=' . self::UD1;
+    if (in_array($s, ['ytb', 'fb', 'dm', 'lk', 'thr'])) {
+      $ud1 = $s;
+    } else {
+      $ud1 = self::UD1;
+    }
+    
+    $url .= '?cid=' . self::AFFILIATE_ID . '&ud1=' . $ud1;
 
     return $url;
   }

@@ -67,10 +67,11 @@ class Items extends BaseController
       ->first();
 
     if (!empty($item)) {
-      $currentUrl = (string) current_url(true);
+      $currentUrl = strtok((string) current_url(true), '?');
       $correctUrl = item_link($item);
       if ($currentUrl != $correctUrl) {
-        return redirect()->to($correctUrl, 301);
+        $queryString = $this->request->getServer('QUERY_STRING');
+        return redirect()->to($correctUrl . ($queryString ? '?' . $queryString : ''), 301);
       }
     }
 
@@ -240,7 +241,8 @@ class Items extends BaseController
       ];
     }
 
-    return redirect()->to(item_aff_link($item));
+    $s = $this->request->getGet('s');
+    return redirect()->to(item_aff_link($item, $s));
   }
 
   public function map()
@@ -275,6 +277,8 @@ class Items extends BaseController
 
   private function showItemDetail($item, $detail, $category, $source, $sourceItemId)
   {
+    $s = $this->request->getGet('s');
+
     if (isset($item)) {
       $updateData = [];
     } else {
@@ -289,7 +293,7 @@ class Items extends BaseController
       ];
 
       if (empty($detail)) {
-        return redirect()->to(item_aff_link($item));
+        return redirect()->to(item_aff_link($item, $s));
       }
     }
 
@@ -366,6 +370,7 @@ class Items extends BaseController
       'base_data' => $this->base_data,
       'item' => $item,
       'detail' => $detail,
+      'aff_s' => $s,
       'breadcrumb_data' => $breadcrumbs_data,
       'sidebar_data' => $sidebar_data,
       'relate_items' => $relate_items,
@@ -378,6 +383,8 @@ class Items extends BaseController
 
   private function showItemReviews($item, $detail, $reviews, $category, $source, $sourceItemId, $slug, $reviews_count = null)
   {
+    $s = $this->request->getGet('s');
+
     if (empty($item)) {
       $item = [
         'category_id' => $category['id'],
@@ -391,7 +398,7 @@ class Items extends BaseController
       ];
 
       if (empty($reviews)) {
-        return redirect()->to(item_aff_link($item));
+        return redirect()->to(item_aff_link($item, $s));
       }
     }
 
@@ -422,6 +429,7 @@ class Items extends BaseController
       'base_data' => $this->base_data,
       'item' => $item,
       'detail' => $detail,
+      'aff_s' => $s,
       'reviews' => $reviews,
       'breadcrumb_data' => $breadcrumbs_data,
       'sidebar_data' => $sidebar_data,

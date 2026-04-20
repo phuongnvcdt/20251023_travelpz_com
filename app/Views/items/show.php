@@ -12,11 +12,11 @@
       <?= view('layout/img_carousel', ['images' => $detail['images'] ?? [['url' => item_img_link($item)]]]) ?>
 
       <div class="item-text text-style text-center mb-3">
-        <a rel="nofollow" class="btn btn-primary btn-action" href="<?= item_book_link($item) ?>">
+        <a rel="nofollow" class="btn btn-primary btn-action" href="<?= item_book_link($item, $aff_s) ?>">
           <i class="fa fa-cart-plus book-now-i"></i>&nbsp;&nbsp;<?= trans('Book Now') ?>
         </a>
       </div>
-      <a rel="nofollow" href="<?= item_book_link($item) ?>" class="btn btn-primary booknow" style="display: none;">
+      <a rel="nofollow" href="<?= item_book_link($item, $aff_s) ?>" class="btn btn-primary booknow" style="display: none;">
         <i class="fa fa-cart-plus book-now-i"></i>&nbsp;&nbsp;<?= trans('Book Now') ?>
       </a>
 

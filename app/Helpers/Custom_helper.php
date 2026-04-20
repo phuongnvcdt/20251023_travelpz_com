@@ -210,6 +210,7 @@ if (!function_exists('is_bot')) {
 
     // 2. UA bất thường
     $suspiciousPatterns = [
+      '/windows 9[58]/i',           // Windows 98/95 — discontinued
       '/windows nt [1-5]\./i',     // quá cũ
       '/windows nt 1[1-9]\./i',    // NT 11+ không tồn tại (Win11 vẫn là NT 10.0)
       '/iphone os [1-7]_/i',       // quá cũ
@@ -339,13 +340,27 @@ if (!function_exists('is_datacenter_ip')) {
         '173.252.64.0/18',
         '204.15.20.0/22',
         // AWS
+        '3.0.0.0/8',
         '16.0.0.0/8',
         '18.128.0.0/9',
         '34.192.0.0/10',
         '35.80.0.0/12',
+        '35.160.0.0/13',
         '44.192.0.0/10',
         '52.0.0.0/8',
         '54.0.0.0/8',
+        // Limelight Networks / Edgio CDN
+        '216.229.64.0/18',
+        // QuadraNet / ColoCrossing
+        '38.87.64.0/18',
+        // Tencent Cloud
+        '43.128.0.0/10',
+        '81.70.0.0/16',
+        '82.156.0.0/15',
+        '129.226.0.0/16',
+        '140.143.0.0/16',
+        '152.136.0.0/16',
+        '170.106.0.0/16',
       ] as $cidr
     ) {
       [$subnet, $bits] = explode('/', $cidr);
