@@ -14,6 +14,8 @@ use App\Libraries\YoutubeWrap;
 class Items extends BaseController
 {
   protected $sourceModel;
+  protected $is_bot;
+  protected $is_ip_rate_limited;
 
   public function __construct()
   {
@@ -27,7 +29,9 @@ class Items extends BaseController
    */
   public function show($categorySlug, $sourceSlug, $sourceId, $slug)
   {
-    if (!is_bot($this->request) && !is_ip_rate_limited($this->request)) {
+    $this->is_bot = is_bot($this->request);
+    $this->is_ip_rate_limited = is_ip_rate_limited($this->request);
+    if (!$this->is_bot && !$this->is_ip_rate_limited) {
       if (rand(1, 100) <= 25) {
         $userAgent = $this->request->getUserAgent()->getAgentString();
         $url = current_url();
@@ -481,7 +485,7 @@ class Items extends BaseController
       ],
     ];
 
-    if (!empty($item['youtube_id']) && is_bot($this->request)) {
+    if (!empty($item['youtube_id']) && $this->is_bot && !$this->is_ip_rate_limited) {
       $videoInfo = YoutubeWrap::getVideoInfo($item['youtube_id'], $this->language['code'] ?? '');
       if (!empty($videoInfo)) {
         $videoTitle = $videoInfo['snippet']['localized']['title'] ?? $videoInfo['snippet']['title'] ?? item_title($item);

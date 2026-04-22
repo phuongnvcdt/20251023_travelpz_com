@@ -199,6 +199,8 @@ if (!function_exists('is_bot')) {
       'UptimeRobot',
       'StatusCake',
       'Site24x7',
+      // Search engine crawlers
+      'Yeti',
       // Office/custom tools
       'BKOffice',
     ];
@@ -211,15 +213,18 @@ if (!function_exists('is_bot')) {
     // 2. UA bất thường
     $suspiciousPatterns = [
       '/windows 9[58]/i',           // Windows 98/95 — discontinued
+      '/windows ce/i',              // Windows CE — embedded/discontinued
       '/windows nt [1-5]\./i',     // quá cũ
       '/windows nt 1[1-9]\./i',    // NT 11+ không tồn tại (Win11 vẫn là NT 10.0)
       '/iphone os [1-7]_/i',       // quá cũ
       '/ppc mac os/i',             // cực hiếm
 
-      '/firefox\/[1-5]\d\./i',      // Firefox < 60 (2019): quá cũ
+      '/firefox\/[1-9]\./i',         // Firefox < 10: quá cũ
+      '/firefox\/[1-5]\d\./i',      // Firefox 10–59 (< 60, 2019): quá cũ
       '/firefox\/\d{3,}/i',        // version vô lý
 
       '/gecko\/\d{4}-\d{2}-\d{2}/i', // sai format
+      '/; U;/i',                    // Mozilla "; U;" — UA kiểu cũ từ Gecko/Presto, browser hiện đại không dùng
 
       // Chrome/Edge version thiếu octet (phải là x.x.x.x)
       '/(?:chrome|edg(?:e|ios)?)\/\d+\.\d+\.\d+(?!\.\d)/i',
@@ -266,6 +271,14 @@ if (!function_exists('is_bot')) {
     // Safari thật (không phải Chrome) phải có Version/
     if ($hasSafari && !$hasChrome && stripos($ua, 'Version/') === false) {
       return true;
+    }
+
+    // Safari Version/ quá cao so với hiện tại (~1 version/năm, Safari 18 = 2024, buffer +3 năm)
+    if ($hasSafari && !$hasChrome && preg_match('/Version\/(\d+)\./i', $ua, $mv)) {
+      $maxSafari = (int)date('Y') - 2003;
+      if ((int)$mv[1] > $maxSafari) {
+        return true;
+      }
     }
 
     // Firefox mà không có Gecko → sai cấu trúc
@@ -353,13 +366,34 @@ if (!function_exists('is_datacenter_ip')) {
         '216.229.64.0/18',
         // QuadraNet / ColoCrossing
         '38.87.64.0/18',
+        // Google Cloud (additional)
+        '34.64.0.0/11',
+        '34.96.0.0/11',
+        // Alibaba Cloud
+        '47.88.0.0/13',
+        '47.96.0.0/11',
+        '106.14.0.0/15',
+        '116.62.0.0/15',
+        '120.55.0.0/16',
+        '121.43.0.0/16',
+        '140.206.0.0/16',
+        '180.153.0.0/16',
         // Tencent Cloud
+        '42.193.0.0/16',
         '43.128.0.0/10',
+        '49.232.0.0/14',
         '81.70.0.0/16',
         '82.156.0.0/15',
+        '101.32.0.0/12',
+        '111.119.0.0/16',
+        '116.204.0.0/16',
+        '124.156.0.0/16',
         '129.226.0.0/16',
         '140.143.0.0/16',
+        '150.109.0.0/16',
         '152.136.0.0/16',
+        '159.138.0.0/16',
+        '166.108.0.0/16',
         '170.106.0.0/16',
       ] as $cidr
     ) {
