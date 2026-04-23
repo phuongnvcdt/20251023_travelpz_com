@@ -31,6 +31,7 @@
               <th>English Name</th>
               <th>Slug</th>
               <th>Parent</th>
+              <th>Menu</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -42,6 +43,7 @@
                   <td><?= esc($cat['en_name']) ?></td>
                   <td><?= esc($cat['slug']) ?></td>
                   <td><?= esc($cat['parent_name'] ?: '-') ?></td>
+                  <td><?= !empty($cat['show_on_menu']) ? '<span class="badge bg-success">Yes</span>' : '<span class="badge bg-secondary">No</span>' ?></td>
                   <td>
                     <a href="<?= admin_category_link($cat, 'edit') ?>" class="btn btn-sm btn-warning">Edit</a>
                     <a href="<?= admin_category_link($cat, 'delete') ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>

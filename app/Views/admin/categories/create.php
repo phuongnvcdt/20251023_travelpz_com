@@ -39,6 +39,11 @@
             </select>
           </div>
 
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="show_on_menu" name="show_on_menu" value="1">
+            <label class="form-check-label" for="show_on_menu">Show on menu</label>
+          </div>
+
           <button type="submit" class="btn btn-primary w-100">Save</button>
         </form>
 

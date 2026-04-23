@@ -101,6 +101,9 @@ abstract class BaseController extends Controller
     $this->base_data['categories'] = $this->categoryModel->select('categories.*, category_translations.name as trans_name')
       ->join('category_translations', "category_translations.category_id = categories.id AND category_translations.language_id = {$this->language_id}", 'left')
       ->where('parent_id', null)->findAll();
+    $this->base_data['menu_categories'] = $this->categoryModel->select('categories.*, category_translations.name as trans_name')
+      ->join('category_translations', "category_translations.category_id = categories.id AND category_translations.language_id = {$this->language_id}", 'left')
+      ->where('show_on_menu', 1)->findAll();
     $this->base_data['languages'] = $languages;
     $this->base_data['language'] = $this->language;
     $this->base_data['meta_title'] = meta_title();

@@ -224,6 +224,7 @@ header {
 .nav-tabs-custom .nav-link:hover {
   border-bottom-color: #07283c !important;
   color: #07283c !important;
+  transform: scale(1.08);
 }
 
 .nav-tabs-custom .nav-link.active {

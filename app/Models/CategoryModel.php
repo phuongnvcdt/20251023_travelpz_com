@@ -8,7 +8,7 @@ class CategoryModel extends Model
 {
   protected $table = 'categories';
   protected $primaryKey = 'id';
-  protected $allowedFields = ['en_name', 'slug', 'parent_id'];
+  protected $allowedFields = ['en_name', 'slug', 'parent_id', 'show_on_menu'];
   protected $useTimestamps = true;
 
   // Tự động sinh slug trước khi insert hoặc update

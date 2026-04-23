@@ -33,8 +33,9 @@ class Categories extends BaseController
     public function store()
     {
         $this->categoryModel->save([
-            'en_name'   => esc($this->request->getPost('en_name')),
-            'parent_id' => esc($this->request->getPost('parent_id')) ?: null
+            'en_name'      => esc($this->request->getPost('en_name')),
+            'parent_id'    => esc($this->request->getPost('parent_id')) ?: null,
+            'show_on_menu' => $this->request->getPost('show_on_menu') ? 1 : 0,
         ]);
 
         return redirect()->to('/admin/categories');
@@ -50,8 +51,9 @@ class Categories extends BaseController
     public function update($id)
     {
         $this->categoryModel->update($id, [
-            'en_name'   => esc($this->request->getPost('en_name')),
-            'parent_id' => esc($this->request->getPost('parent_id')) ?: null
+            'en_name'      => esc($this->request->getPost('en_name')),
+            'parent_id'    => esc($this->request->getPost('parent_id')) ?: null,
+            'show_on_menu' => $this->request->getPost('show_on_menu') ? 1 : 0,
         ]);
 
         return redirect()->to('/admin/categories');

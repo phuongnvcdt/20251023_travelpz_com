@@ -201,7 +201,11 @@ class Items extends ResourceController
     $itemId = $this->model->insert($insertData);
     $item = $this->model->find($itemId);
 
-    $sub_categories = $detail['data']['categories'] ?? [];
+    $sub_categories = array_map(
+      fn($s) => preg_replace('/(?<=[a-z])(?=[A-Z])/', ' ', $s),
+      $detail['data']['categories'] ?? []
+    );
+
     if (!empty($sub_categories)) {
       $categoryModel = new CategoryModel();
       $subs = $categoryModel->insertSubCategories($category, $sub_categories);
@@ -297,7 +301,11 @@ class Items extends ResourceController
     $itemId = $this->model->insert($insertData);
     $item = $this->model->find($itemId);
 
-    $sub_categories = $detail['categories'] ?? [];
+    $sub_categories = array_map(
+      fn($s) => preg_replace('/(?<=[a-z])(?=[A-Z])/', ' ', $s),
+      $detail['categories'] ?? []
+    );
+
     if (!empty($sub_categories)) {
       $categoryModel = new CategoryModel();
       $subs = $categoryModel->insertSubCategories($category, $sub_categories);
@@ -389,7 +397,11 @@ class Items extends ResourceController
     $itemId = $this->model->insert($insertData);
     $item = $this->model->find($itemId);
 
-    $sub_categories = $detail['categories'] ?? [];
+    $sub_categories = array_map(
+      fn($s) => preg_replace('/(?<=[a-z])(?=[A-Z])/', ' ', $s),
+      $detail['categories'] ?? []
+    );
+
     if (!empty($sub_categories)) {
       $categoryModel = new CategoryModel();
       $subs = $categoryModel->insertSubCategories($category, $sub_categories);

@@ -143,7 +143,7 @@
         <div class="collapse navbar-collapse" id="navbarMain">
           <!-- Left: Category menu -->
           <ul class="navbar-nav me-auto nav-tabs-custom">
-            <?php foreach ($base_data['categories'] ?? [] as $cat): ?>
+            <?php foreach ($base_data['menu_categories'] ?? [] as $cat): ?>
               <li class="nav-item">
                 <a class="nav-link <?= ($cat['id'] == ($base_data['category']['id'] ?? '')) ? 'active' : '' ?>"
                   href="<?= category_link($cat) ?>">
@@ -167,8 +167,8 @@
             <li class="nav-item me-2">
               <div class="d-flex align-items-center">
                 <!-- Login -->
-                <div>
-                  <a class="btn btn-outline-success btn-sm" href="<?= base_url('login') ?>">
+                <div class="d-none">
+                  <a class="btn btn-outline-success btn-sm" href="<?= /*base_url('login')*/ '#' ?>">
                     <?= trans('Login') ?>
                   </a>
                 </div>
