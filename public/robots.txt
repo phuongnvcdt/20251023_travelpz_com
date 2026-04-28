@@ -5,5 +5,9 @@ Disallow: /map
 Disallow: /*/map
 Disallow: /rentcar
 Disallow: /*/rentcar
+Disallow: /api/
+Disallow: /*/api/
+Disallow: /login
+Disallow: /*/login
 
 Sitemap: https://travelpz.com/sitemap.xml
