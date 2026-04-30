@@ -237,11 +237,11 @@ abstract class BaseController extends Controller
 
   protected function getRelateItems($city, $country, $itemId = null)
   {
-    if (!empty($city)) {
+    if (!empty($city['id'])) {
       $relate_items = $this->getRelateItemsByLoc($itemId, $city);
     }
 
-    if (empty($relate_items) && !empty($country)) {
+    if (empty($relate_items) && !empty($country['id'])) {
       $relate_items = $this->getRelateItemsByLoc($itemId, $country);
     }
 

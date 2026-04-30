@@ -88,6 +88,10 @@ if (!function_exists('category_link')) {
 if (!function_exists('location_link')) {
   function location_link($location)
   {
+    if (empty($location['slug'])) {
+      return null;
+    }
+
     return locale_url('loc/' . $location['slug']);
   }
 }

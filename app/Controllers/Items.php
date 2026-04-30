@@ -349,6 +349,14 @@ class Items extends BaseController
         $country['trans_name'] = $new_country_trans_name;
         $this->locationTranslationModel->updateTransName($country, $this->language, $country['trans_name']);
       }
+    } else {
+      print_r($detail['address']['country']['id']);
+      $country = $this->locationModel->findBySource($source, $detail['address']['country']['id'] ?? null, null);
+      if (!$country) {
+        $country = [];
+      }
+
+      $country['trans_name'] = $detail['address']['country']['name'] ?? '';
     }
 
     $city = $this->locationModel->find($item['city_id'] ?? 0);
@@ -359,6 +367,13 @@ class Items extends BaseController
         $city['trans_name'] = $new_city_trans_name;
         $this->locationTranslationModel->updateTransName($city, $this->language, $city['trans_name']);
       }
+    } else {
+      $city = $this->locationModel->findBySource($source, $detail['address']['city']['id'] ?? null, $country['id'] ?? null);
+      if (!$city) {
+        $city = [];
+      }
+
+      $city['trans_name'] = $detail['address']['city']['name'] ?? '';
     }
 
     $breadcrumbs_data = $this->getLocBreadcrumbs([$country, $city], item_title($item));

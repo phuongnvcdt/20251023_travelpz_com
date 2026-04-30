@@ -240,6 +240,9 @@ if (!function_exists('is_bot')) {
 
       // Android 4.x trở xuống (2013 trở về trước)
       '/Android [1-4]\./i',
+
+      // iOS Safari build number luôn là 604.x — giá trị khác là fake
+      '/(?:iphone|ipad).+safari\/(?!604\.)/i',
     ];
 
     foreach ($suspiciousPatterns as $regex) {
@@ -355,6 +358,7 @@ if (!function_exists('is_datacenter_ip')) {
         '204.15.20.0/22',
         // AWS
         '3.0.0.0/8',
+        '100.20.0.0/14',
         '16.0.0.0/8',
         '18.128.0.0/9',
         '34.192.0.0/10',
